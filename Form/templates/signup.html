@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+<form action='/signup/' method='POST'>
+{% csrf_token %}
+ 
+ <div class="form-group">
+    <label for="phone">Enter Mobile No.</label>
+    <input type="text" class="form-control" name="phone" id="phone" Required>
+  </div>
+    <div class="form-group">
+    <label for="age">Enter Age</label>
+    <input type="text" class="form-control" name="age" id="age" Required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" Required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1" Required>
+  </div>
+  <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+</div>
+
+{% endblock body %}

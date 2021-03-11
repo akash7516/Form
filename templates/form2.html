@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="/form2/" method="POST">
+    {% for i in loop %}
+    <div class="container">
+
+
+
+                {% csrf_token %}
+                <h1 class="text-center">Give customer {{i}} details</h1>
+                <div class="form-group">
+                    <label for="name">Enter Name</label>
+                    <input type="text" class="form-control" name="name" id="name" Required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Enter DOB</label>
+                    <input type="text" class="form-control" name="dob" id="dob" Required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Enter Age</label>
+                    <input type="text" class="form-control" name="age" id="age" Required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Enter Gender</label>
+                    <input type="text" class="form-control" name="gender" id="gender" Required>
+                </div>
+                <div class="form-group">
+                    <label for="members">Enter no. of members in family</label>
+                    <input type="text" class="form-control" name="members" id="members" Required>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    {% endfor %}
+    <div class="container mt-2 mb-4">
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        <a href="http://127.0.0.1:8000/edit/" class="text-dark" ><button type="button" class="btn btn-primary mt-2">Update</button></a>
+    
+    </div>
+</form>
+
+
+{% endblock body %}

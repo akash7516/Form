@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="" method="POST">
+ {% csrf_token %}
+<div class="container">
+    {% csrf_token %}
+    <h1 class="text-center">Update here customer details</h1>
+    <div class="form-group">
+        <label for="name">Enter Name</label>
+        <input type="text" class="form-control" name="name" id="name">
+    </div>
+    <div class="form-group">
+        <label for="dob">Enter DOB</label>
+        <input type="text" class="form-control" name="dob" id="dob">
+    </div>
+    <div class="form-group">
+        <label for="age">Enter Age</label>
+        <input type="text" class="form-control" name="age" id="age">
+    </div>
+    <div class="form-group">
+        <label for="gender">Enter Gender</label>
+        <input type="text" class="form-control" name="gender" id="gender">
+    </div>
+    <div class="form-group">
+        <label for="members">Enter no. of members in family</label>
+        <input type="text" class="form-control" name="members" id="members">
+    </div>
+    <input type="submit" class="btn btn-success mt-2" value="update">
+    <a href="{% url 'edit' %}" class="btn btn-info mt-2">Back</a>
+    
+    </div>
+</form>
+
+    {% endblock %}
